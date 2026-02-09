@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Count</title>
+</head>
+<body>
+
+<script>
+
+const words = (str) => {
+  return str.replace(/[.,]/g, "").split(" ");
+};
+
+const wordFrequency = (wordsArr) => {
+  const freq = {};
+   const uniqueWords = [...new Set(wordsArr)];
+
+  
+  uniqueWords.forEach(word => {
+    freq[word] = wordsArr.filter(w => w === word).length;
+  });
+
+  return freq;
+};
+
+const text = "Hi , I am studying in rvscas in sulur.In school of computer studies PG. I completed my UG at KASC.";
+
+
+const allWords = words(text);
+
+
+const frequency = wordFrequency(allWords);
+console.log(frequency);
+
+</script>
+
+</body>
+</html>
+
+
+
+ 
+ 
